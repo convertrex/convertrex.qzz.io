@@ -1,64 +1,180 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Convertrex - High-Converting Promo Emails</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Icons (for theme toggle + scroll to top) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   </head>
+
   <body>
-    <header>
+    <!-- HEADER -->
+    <header id="navbar" class="sticky">
       <nav>
         <div class="logo">Convertrex</div>
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#work">Work</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#work">Case Studies</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-right">
-          <button class="theme-toggle" aria-label="Toggle Theme">🌙</button>
+          <button id="theme-toggle" aria-label="Toggle Theme">
+            <i data-lucide="moon"></i>
+          </button>
           <a href="#contact" class="cta-button">Let’s build your high-converting promo email now</a>
         </div>
       </nav>
-    </header><section id="home">
-  <h1>Build high-converting promo emails that sell</h1>
-  <p>Let’s write emails that don’t just land in inboxes — they convert.</p>
-  <a href="#contact" class="cta-button hero-cta">Let’s build your high-converting promo email now</a>
-</section>
+    </header>
 
-<section id="about">
-  <h2>About</h2>
-  <p>Who the heck is Convertrex and why should you care? We’re your email copy secret weapon — ready to bring conversions through the roof.</p>
-</section>
+    <!-- HERO -->
+    <section id="home" class="section hero" data-aos="fade-up">
+      <h1>Get Copy That Converts.</h1>
+      <p>Let’s write emails that don’t just land in inboxes — they sell.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="cta-button primary">Let’s build your high-converting promo email now</a>
+        <a href="#work" class="cta-button secondary">View Results</a>
+      </div>
+    </section>
 
-<section id="work">
-  <h2>Work</h2>
-  <p>Check out our email copy samples and the results they drove. Real proof. Real impact.</p>
-  <!-- Sample work will go here -->
-</section>
+    <!-- ABOUT -->
+    <section id="about" class="section" data-aos="fade-up">
+      <h2>Why Convertrex?</h2>
+      <ul class="about-highlights">
+        <li>💥 Built to write copy that sells not tells</li>
+        <li>📧 Specialized in promo emails that print conversions</li>
+        <li>🚀 Ready to launch your next big email win</li>
+      </ul>
+      <p>Convertrex was born from late-night grind sessions, hundreds of test campaigns, and a borderline obsession with email conversion psychology. If it ain’t converting, I’m not done yet.</p>
+    </section>
 
-<section id="services">
-  <h2>Services</h2>
-  <ul>
-    <li>Promotional Email Copywriting</li>
-    <li>Email Sequences</li>
-    <li>Product Launch Emails</li>
-    <li>Flash Sale Campaigns</li>
-    <li>Abandoned Cart Emails</li>
-  </ul>
-</section>
+    <!-- SERVICES -->
+    <section id="services" class="section" data-aos="fade-up">
+      <h2>Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>💌 Promo Email Copywriting</h3>
+          <p>From idea to inbox — I write emails that trigger clicks, replies, and conversions.</p>
+        </div>
+        <div class="service-card">
+          <h3>🧠 Strategy + Audit</h3>
+          <p>Get the honest truth on what’s working, what’s broken, and how to fix it.</p>
+        </div>
+        <div class="service-card">
+          <h3>🚨 Launch Sequences</h3>
+          <p>Pre-launch, mid-launch, post-launch — I write full sequences that drive urgency and sales.</p>
+        </div>
+        <div class="service-card">
+          <h3>⚡ Campaign Copy</h3>
+          <p>Flash sales? Product drops? I write fast-hitting emails that get clicked.</p>
+        </div>
+      </div>
+    </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Reach out and let’s make your emails slap. Quick form or book a call.</p>
-  <!-- Contact form or calendar link will go here -->
-</section>
+    <!-- WORK -->
+    <section id="work" class="section" data-aos="fade-up">
+      <h2>Case Studies</h2>
+      <div class="case-grid">
+        <!-- Example case -->
+        <div class="case-card">
+          <h3>Product Launch - SaaS</h3>
+          <p>42% click rate from cold list using urgency-driven copy</p>
+          <!-- Screenshot or snippet here -->
+        </div>
+        <!-- Add more as needed -->
+      </div>
+    </section>
 
-<footer>
-  <p>&copy; 2025 Convertrex. All rights reserved.</p>
-  <a href="#resume">Resume</a>
-</footer>
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section" data-aos="fade-up">
+      <h2>What Clients Say</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial">
+          <p>"The best promo emails we’ve ever launched. Click rates spiked 3x."</p>
+          <span>- Founder, GrowthSaaS</span>
+        </div>
+        <!-- More testimonials later -->
+      </div>
+    </section>
 
+    <!-- CONTACT -->
+    <section id="contact" class="section" data-aos="fade-up">
+      <h2>Let’s Connect</h2>
+      <p>Send a message — I’ll reply faster than a conversion spike.</p>
+      <form id="contact-form">
+        <input type="text" placeholder="Your Name" name="name" required />
+        <input type="email" placeholder="Email Address" name="email" required />
+        <textarea placeholder="Your Message" name="message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div id="toast" class="toast">📨 Sent. You’ll hear back faster than you expect.</div>
+    </section>
+
+    <!-- BACK TO TOP -->
+    <button id="scroll-top" title="Back to Top"><i data-lucide="arrow-up"></i></button>
+
+    <!-- FOOTER -->
+    <footer class="footer section">
+      <div class="footer-content">
+        <p>&copy; 2025 Convertrex. All rights reserved.</p>
+        <a href="#resume">Download Resume</a>
+      </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 600, once: true });
+
+      // THEME TOGGLE
+      const toggle = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme) html.setAttribute("data-theme", storedTheme);
+
+      toggle.addEventListener("click", () => {
+        const current = html.getAttribute("data-theme");
+        const next = current === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+      });
+
+      // NAV SHRINK
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+        nav.classList.toggle("scrolled", window.scrollY > 100);
+      });
+
+      // SCROLL TO TOP
+      const topBtn = document.getElementById("scroll-top");
+      window.addEventListener("scroll", () => {
+        topBtn.style.display = window.scrollY > 500 ? "block" : "none";
+      });
+      topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+      // CONTACT FORM TOAST
+      const form = document.getElementById("contact-form");
+      const toast = document.getElementById("toast");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 4000);
+        form.reset();
+      });
+    </script>
+    <script>
+      lucide.createIcons();
+    </script>
   </body>
 </html>
