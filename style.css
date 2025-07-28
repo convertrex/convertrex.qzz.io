@@ -48,10 +48,10 @@ nav {
   padding: 1.5rem 2rem;
   position: sticky;
   top: 0;
-  z-index: 999;
-  border-bottom: 1px solid var(--border-color);
-  display: flex; /* Fix 3: Use flexbox */
+  z-index: 999; /* Fix 1.1: Ensure nav visibility */
+  display: flex; /* Fix 3: Flexbox for nav */
   justify-content: center; /* Fix 3: Center content */
+  border-bottom: 1px solid var(--border-color);
 }
 
 .hamburger {
@@ -61,6 +61,7 @@ nav {
   color: var(--text-color);
   font-size: 1.5rem;
   cursor: pointer;
+  z-index: 1000; /* Fix 1.1: Ensure hamburger visibility */
 }
 
 .nav-links {
@@ -94,26 +95,6 @@ nav {
   color: var(--accent-color);
 }
 
-.sticky-cta {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: var(--accent-color);
-  color: #111317;
-  padding: 12px 20px; /* Fix 7: Thumb-friendly padding */
-  border-radius: 16px;
-  font-weight: 700;
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem; /* Fix 7: Mobile-friendly font */
-  transition: transform 0.3s ease, background 0.3s ease;
-  z-index: 1000;
-}
-
-.sticky-cta:hover {
-  background: #00CC7A;
-  transform: scale(1.05);
-}
-
 header#hero {
   padding: 4rem 2rem;
   animation: fadeIn 1s ease;
@@ -122,6 +103,7 @@ header#hero {
   flex-direction: column;
   align-items: center; /* Fix 3: Center content */
   min-height: 80vh; /* Fix 8: Flexible height */
+  z-index: 1; /* Fix 1.1: Ensure section visibility */
 }
 
 header#hero h1 {
@@ -129,7 +111,7 @@ header#hero h1 {
   font-weight: 900;
   font-size: clamp(2rem, 5vw, 2.5rem);
   margin-bottom: 1rem;
-  text-align: center; /* Fix 4: Center text on mobile */
+  text-align: center; /* Fix 4: Center text */
 }
 
 header#hero p {
@@ -137,7 +119,7 @@ header#hero p {
   color: #ccc;
   max-width: 700px;
   margin-bottom: 1.5rem;
-  text-align: center; /* Fix 4: Center text on mobile */
+  text-align: center; /* Fix 4: Center text */
 }
 
 .btn {
@@ -160,7 +142,8 @@ header#hero p {
 section, .case-study {
   animation: fadeIn 1s ease;
   min-height: 80vh; /* Fix 8: Flexible height */
-  padding: 3rem 2rem; /* Fix 4: Consistent section padding */
+  padding: 3rem 2rem; /* Fix 4: Consistent padding */
+  z-index: 1; /* Fix 1.1: Ensure section visibility */
 }
 
 h2 {
@@ -356,26 +339,6 @@ footer p {
   overflow-wrap: break-word; /* Fix 5: Handle text overflow */
 }
 
-.proof-bar {
-  background: var(--card-bg);
-  padding: 1rem;
-  text-align: center;
-  position: fixed;
-  bottom: 4rem;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 255, 178, 0.1);
-  animation: slideIn 1s ease;
-  z-index: 998;
-}
-
-.proof-bar p {
-  font-size: 1rem;
-  color: var(--accent-color);
-  overflow-wrap: break-word; /* Fix 5: Handle text overflow */
-}
-
 .dark-mode-toggle {
   position: absolute;
   top: 1.5rem;
@@ -385,6 +348,7 @@ footer p {
   color: var(--text-color);
   font-size: 1.5rem;
   cursor: pointer;
+  z-index: 1000; /* Fix 1.1: Ensure visibility */
 }
 
 .popup {
@@ -416,45 +380,38 @@ footer p {
   100% { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-@keyframes slideIn {
-  0% { transform: translateX(-50%) translateY(100px); opacity: 0; }
-  100% { transform: translateX(-50%) translateY(0); opacity: 1; }
-}
-
 @media (max-width: 768px) {
-  body.hidden-nav .nav-links { 
-    max-height: 0; 
-    opacity: 0; 
-    overflow: hidden; 
+  .hamburger {
+    display: block; /* Fix 1.1: Ensure hamburger visible */
   }
-  .nav-links.show { 
-    max-height: 300px; 
-    opacity: 1; 
+  body.hidden-nav .nav-links {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
   }
-  body { 
+  .nav-links.show {
+    max-height: 300px;
+    opacity: 1;
+  }
+  body {
     padding: 20px; /* Fix 4: Mobile padding */
   }
-  header#hero h1 { 
+  header#hero h1 {
     font-size: 1.5rem; /* Fix 4: Smaller hero font */
     text-align: center; /* Fix 4: Center text */
   }
-  h2 { 
+  h2 {
     font-size: clamp(1.25rem, 3.5vw, 1.5rem); /* Fix 4: Smaller headings */
   }
-  section, .case-study { 
+  section, .case-study {
     padding: 20px 10px; /* Fix 4: Mobile section padding */
   }
-  .btn, .sticky-cta { 
+  .btn {
     width: 100%; /* Fix 7: Full-width buttons */
     font-size: 1rem; /* Fix 7: Mobile-friendly font */
     padding: 12px 20px; /* Fix 7: Thumb-friendly padding */
   }
-  .proof-bar { 
-    bottom: 6rem; 
-    font-size: 0.9rem; 
-    width: 90%; /* Fix 2: Adaptive width */
-  }
-  .email-grid, .testimonials-grid { 
+  .email-grid, .testimonials-grid {
     grid-template-columns: 1fr; /* Fix 4: Stack cards */
   }
-  }
+    }
