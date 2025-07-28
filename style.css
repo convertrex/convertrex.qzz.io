@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Fix 9: Prevent horizontal scroll */
   scroll-behavior: smooth;
 }
 
@@ -26,7 +26,8 @@ body {
   line-height: 1.6;
   background: var(--bg-color);
   color: var(--text-color);
-  overflow-x: hidden;
+  overflow-x: hidden; /* Fix 9: Prevent horizontal scroll */
+  overflow-wrap: break-word; /* Fix 5: Handle text overflow */
 }
 
 a {
@@ -36,8 +37,9 @@ a {
 }
 
 .container {
-  max-width: 1000px;
-  margin: auto;
+  width: 90%; /* Fix 2: Adaptive width */
+  max-width: 1000px; /* Fix 2: Cap max width */
+  margin: 0 auto; /* Fix 2: Center content */
   padding: 3rem 2rem;
 }
 
@@ -48,6 +50,8 @@ nav {
   top: 0;
   z-index: 999;
   border-bottom: 1px solid var(--border-color);
+  display: flex; /* Fix 3: Use flexbox */
+  justify-content: center; /* Fix 3: Center content */
 }
 
 .hamburger {
@@ -60,7 +64,7 @@ nav {
 }
 
 .nav-links {
-  display: flex;
+  display: flex; /* Fix 3: Flexbox for nav */
   justify-content: flex-start;
   gap: 1.5rem;
   list-style: none;
@@ -96,10 +100,11 @@ nav {
   right: 2rem;
   background: var(--accent-color);
   color: #111317;
-  padding: 0.75rem 1.5rem;
+  padding: 12px 20px; /* Fix 7: Thumb-friendly padding */
   border-radius: 16px;
   font-weight: 700;
   font-family: 'Inter', sans-serif;
+  font-size: 1rem; /* Fix 7: Mobile-friendly font */
   transition: transform 0.3s ease, background 0.3s ease;
   z-index: 1000;
 }
@@ -113,6 +118,10 @@ header#hero {
   padding: 4rem 2rem;
   animation: fadeIn 1s ease;
   position: relative;
+  display: flex; /* Fix 3: Flexbox for hero */
+  flex-direction: column;
+  align-items: center; /* Fix 3: Center content */
+  min-height: 80vh; /* Fix 8: Flexible height */
 }
 
 header#hero h1 {
@@ -120,6 +129,7 @@ header#hero h1 {
   font-weight: 900;
   font-size: clamp(2rem, 5vw, 2.5rem);
   margin-bottom: 1rem;
+  text-align: center; /* Fix 4: Center text on mobile */
 }
 
 header#hero p {
@@ -127,16 +137,18 @@ header#hero p {
   color: #ccc;
   max-width: 700px;
   margin-bottom: 1.5rem;
+  text-align: center; /* Fix 4: Center text on mobile */
 }
 
 .btn {
   display: inline-block;
   background: var(--accent-color);
   color: #111317;
-  padding: 0.75rem 1.5rem;
+  padding: 12px 20px; /* Fix 7: Thumb-friendly padding */
   border-radius: 16px;
   font-weight: 700;
   font-family: 'Inter', sans-serif;
+  font-size: 1rem; /* Fix 7: Mobile-friendly font */
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
@@ -147,6 +159,8 @@ header#hero p {
 
 section, .case-study {
   animation: fadeIn 1s ease;
+  min-height: 80vh; /* Fix 8: Flexible height */
+  padding: 3rem 2rem; /* Fix 4: Consistent section padding */
 }
 
 h2 {
@@ -154,6 +168,7 @@ h2 {
   font-weight: 900;
   font-size: clamp(1.75rem, 4vw, 2rem);
   margin-bottom: 1rem;
+  text-align: center; /* Fix 4: Center headings */
 }
 
 .subtext, #why p {
@@ -161,12 +176,20 @@ h2 {
   color: #777;
   margin-top: -0.5rem;
   margin-bottom: 1.5rem;
+  overflow-wrap: break-word; /* Fix 5: Handle text overflow */
+}
+
+#about {
+  display: flex; /* Fix 3: Flexbox for about */
+  flex-direction: column; /* Fix 4: Stack on mobile */
+  gap: 20px; /* Fix 4: Spacing */
 }
 
 #about p:not(.subtext) {
   font-size: 1rem;
   color: var(--text-color);
   margin-bottom: 1rem;
+  overflow-wrap: break-word; /* Fix 5: Handle text overflow */
 }
 
 #services ul {
@@ -179,6 +202,7 @@ h2 {
   margin: 0.5rem 0;
   padding-left: 1.5rem;
   position: relative;
+  overflow-wrap: break-word; /* Fix 5: Handle text overflow */
 }
 
 #services li::before {
@@ -186,10 +210,12 @@ h2 {
   position: absolute;
   left: 0;
   top: 0.2rem;
+  max-width: 100%; /* Fix 6: Fluid icons */
+  height: auto; /* Fix 6: Fluid icons */
 }
 
 .email-grid, .testimonials-grid {
-  display: grid;
+  display: grid; /* Fix 3: Grid layout */
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
@@ -212,6 +238,7 @@ h2 {
   font-weight: 700;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  overflow-wrap: break-word; /* Fix 5: Handle text overflow */
 }
 
 .email-card .preview {
@@ -219,6 +246,7 @@ h2 {
   font-size: 1rem;
   color: #ccc;
   margin-bottom: 1rem;
+  overflow-wrap: break-word; /* Fix 5: Handle text overflow */
 }
 
 .testimonials-grid blockquote {
@@ -228,6 +256,7 @@ h2 {
   box-shadow: 0 0 20px rgba(0, 255, 178, 0.1);
   font-style: italic;
   font-size: 1rem;
+  overflow-wrap: break-word; /* Fix 5: Handle text overflow */
 }
 
 .testimonials-grid .stat {
@@ -275,7 +304,7 @@ h2 {
 }
 
 form {
-  display: flex;
+  display: flex; /* Fix 3: Flexbox for form */
   flex-direction: column;
   gap: 1rem;
   max-width: 600px;
@@ -283,13 +312,15 @@ form {
 }
 
 input, select, textarea {
-  padding: 0.75rem;
+  padding: 12px 20px; /* Fix 7: Thumb-friendly padding */
   border: 1px solid var(--border-color);
   border-radius: 16px;
   background: var(--card-bg);
   color: var(--text-color);
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  font-size: 1rem; /* Fix 7: Mobile-friendly font */
+  width: 100%; /* Fix 7: Full-width inputs */
+  overflow-wrap: break-word; /* Fix 5: Handle text overflow */
 }
 
 input:focus, select:focus, textarea:focus {
@@ -308,18 +339,21 @@ select {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%2300E68C" d="M6 9L2 5h8z"/></svg>');
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
+  max-width: 100%; /* Fix 6: Fluid dropdown */
 }
 
 footer {
   text-align: center;
   padding: 2rem;
   border-top: 1px solid var(--border-color);
+  min-height: 10vh; /* Fix 8: Flexible height */
 }
 
 footer p {
   color: var(--accent-color);
   text-decoration: underline;
   font-size: 1.2rem;
+  overflow-wrap: break-word; /* Fix 5: Handle text overflow */
 }
 
 .proof-bar {
@@ -339,6 +373,7 @@ footer p {
 .proof-bar p {
   font-size: 1rem;
   color: var(--accent-color);
+  overflow-wrap: break-word; /* Fix 5: Handle text overflow */
 }
 
 .dark-mode-toggle {
@@ -367,6 +402,8 @@ footer p {
   text-align: center;
   z-index: 1000;
   display: none;
+  width: 90%; /* Fix 2: Adaptive width */
+  max-width: 400px; /* Fix 2: Cap max width */
 }
 
 .popup.show {
@@ -385,12 +422,39 @@ footer p {
 }
 
 @media (max-width: 768px) {
-  .hamburger { display: block; }
-  body.hidden-nav .nav-links { max-height: 0; opacity: 0; overflow: hidden; }
-  .nav-links.show { max-height: 300px; opacity: 1; }
-  h1 { font-size: clamp(1.75rem, 4vw, 2rem); }
-  h2 { font-size: clamp(1.5rem, 3.5vw, 1.75rem); }
-  header, section, nav { padding: 2rem 1rem; }
-  .proof-bar { bottom: 6rem; font-size: 0.9rem; }
-  .sticky-cta { bottom: 1rem; right: 1rem; padding: 0.5rem 1rem; }
-                   }
+  body.hidden-nav .nav-links { 
+    max-height: 0; 
+    opacity: 0; 
+    overflow: hidden; 
+  }
+  .nav-links.show { 
+    max-height: 300px; 
+    opacity: 1; 
+  }
+  body { 
+    padding: 20px; /* Fix 4: Mobile padding */
+  }
+  header#hero h1 { 
+    font-size: 1.5rem; /* Fix 4: Smaller hero font */
+    text-align: center; /* Fix 4: Center text */
+  }
+  h2 { 
+    font-size: clamp(1.25rem, 3.5vw, 1.5rem); /* Fix 4: Smaller headings */
+  }
+  section, .case-study { 
+    padding: 20px 10px; /* Fix 4: Mobile section padding */
+  }
+  .btn, .sticky-cta { 
+    width: 100%; /* Fix 7: Full-width buttons */
+    font-size: 1rem; /* Fix 7: Mobile-friendly font */
+    padding: 12px 20px; /* Fix 7: Thumb-friendly padding */
+  }
+  .proof-bar { 
+    bottom: 6rem; 
+    font-size: 0.9rem; 
+    width: 90%; /* Fix 2: Adaptive width */
+  }
+  .email-grid, .testimonials-grid { 
+    grid-template-columns: 1fr; /* Fix 4: Stack cards */
+  }
+  }
