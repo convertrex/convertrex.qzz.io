@@ -60,12 +60,6 @@ document.querySelectorAll('section, .email-card, .testimonials-grid blockquote, 
   observer.observe(el);
 });
 
-// Proof Bar Slide-In
-const proofBar = document.querySelector('#proof-bar');
-if (proofBar) {
-  setTimeout(() => proofBar.classList.add('animate'), 1000);
-}
-
 // Form Submission Pop-up
 document.querySelector('form').addEventListener('submit', function(e) {
   const popup = document.createElement('div');
