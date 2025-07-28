@@ -6,15 +6,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth'
     });
+    // Close menu on link click (mobile)
+    if (window.innerWidth <= 768) {
+      navLinks.classList.remove('show');
+      navLinks.classList.add('hidden');
+      hamburger.textContent = '☰';
+    }
   });
 });
 
 // Hamburger Menu
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
+
+// Set initial state for mobile
+if (window.innerWidth <= 768) {
+  navLinks.classList.add('hidden');
+  navLinks.classList.remove('show');
+}
+
 hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-  hamburger.textContent = navLinks.classList.contains('show') ? '✕' : '☰';
+  const isOpen = navLinks.classList.contains('show');
+  navLinks.classList.toggle('show', !isOpen);
+  navLinks.classList.toggle('hidden', isOpen);
+  hamburger.textContent = isOpen ? '☰' : '✕';
+});
+
+// Handle window resize
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    navLinks.classList.remove('show', 'hidden');
+    hamburger.textContent = '☰';
+  } else {
+    navLinks.classList.add('hidden');
+    navLinks.classList.remove('show');
+    hamburger.textContent = '☰';
+  }
 });
 
 // Fade-In Animations
@@ -23,7 +50,7 @@ const observer = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       setTimeout(() => {
         entry.target.classList.add('animate');
-      }, index * 200); // 0.2s stagger
+      }, index * 200);
       observer.unobserve(entry.target);
     }
   });
