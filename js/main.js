@@ -1,4 +1,4 @@
-// Js #1
+// main.js
 // Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
@@ -56,7 +56,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('section, .email-card, .testimonials-grid blockquote, .case-study').forEach(el => {
+document.querySelectorAll('section, .email-card, .testimonials-grid blockquote, .case-study, .pricing-card').forEach(el => {
   observer.observe(el);
 });
 
