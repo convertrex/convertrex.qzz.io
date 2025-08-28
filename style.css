@@ -2,16 +2,16 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Fix 9: Prevent horizontal scroll */
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 :root {
-  --bg-color: #111317; /* Prompt 2: Matte dark */
+  --bg-color: #111317;
   --text-color: #f5f5f7;
   --card-bg: #1A1D23;
   --border-color: #333;
-  --accent-color: #00E68C; /* Prompt 2: Conversion Green */
+  --accent-color: #00E68C;
 }
 
 body.light-mode {
@@ -22,13 +22,13 @@ body.light-mode {
 }
 
 body {
-  font-family: 'Inter', sans-serif; /* Prompt 2: Inter for body */
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  background: var(--bg-color); /* Prompt 2: Matte dark */
+  background: var(--bg-color);
   color: var(--text-color);
-  overflow-x: hidden; /* Fix 9: Prevent horizontal scroll */
-  overflow-wrap: break-word; /* Fix 6: Text overflow */
-  padding: 1rem; /* Fix 3: Mobile padding */
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  padding: 1rem;
 }
 
 a {
@@ -38,12 +38,12 @@ a {
 }
 
 .container {
-  display: flex; /* Fix 3: Flexbox */
-  flex-direction: column; /* Fix 3: Mobile stacking */
-  gap: 2rem; /* Fix 3: Spacing */
-  width: 90%; /* Fix 2: Adaptive width */
-  max-width: 1000px; /* Fix 2: Cap max width */
-  margin: 0 auto; /* Fix 2: Center content */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 2rem 1rem;
 }
 
@@ -52,25 +52,25 @@ nav {
   padding: 1.5rem 1rem;
   position: sticky;
   top: 0;
-  z-index: 999; /* Fix 1.1: Ensure nav visibility */
-  display: flex; /* Fix 3: Flexbox */
-  justify-content: center; /* Fix 3: Center content */
+  z-index: 999;
+  display: flex;
+  justify-content: center;
   border-bottom: 1px solid var(--border-color);
 }
 
 .hamburger {
-  display: block; /* Fix 3: Mobile hamburger */
+  display: block;
   background: none;
   border: none;
   color: var(--text-color);
   font-size: 1.5rem;
   cursor: pointer;
-  z-index: 1000; /* Fix 1.1: Ensure hamburger visibility */
+  z-index: 1000;
 }
 
 .nav-links {
-  display: flex; /* Fix 3: Flexbox */
-  flex-direction: column; /* Fix 3: Mobile stacking */
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
   list-style: none;
   max-height: 0;
@@ -91,47 +91,47 @@ nav {
 }
 
 .nav-links a:hover {
-  color: var(--accent-color); /* Prompt 2: Accent color */
+  color: var(--accent-color);
 }
 
 header#hero {
-  display: flex; /* Fix 3: Flexbox */
-  flex-direction: column; /* Fix 3: Mobile stacking */
-  align-items: center; /* Fix 3: Center content */
-  padding: 2rem 1rem; /* Fix 3: Mobile padding */
-  min-height: 80vh; /* Fix 8: Flexible height */
-  z-index: 1; /* Fix 1.1: Section visibility */
-  animation: fadeIn 1s ease; /* Prompt 2: Subtle animation */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-height: 80vh;
+  z-index: 1;
+  animation: fadeIn 1s ease;
 }
 
 header#hero h1 {
-  font-family: 'Inter', sans-serif; /* Prompt 2: Inter 900 for headings */
+  font-family: 'Inter', sans-serif;
   font-weight: 900;
-  font-size: 2rem; /* Fix 3: Mobile hero font */
-  text-align: center; /* Fix 3: Center text */
+  font-size: 2rem;
+  text-align: center;
   margin-bottom: 1rem;
 }
 
 header#hero p {
-  font-size: 1rem; /* Fix 3: Mobile subtext */
+  font-size: 1rem;
   color: #ccc;
   max-width: 700px;
   margin-bottom: 1.5rem;
-  text-align: center; /* Fix 3: Center text */
+  text-align: center;
 }
 
 .btn {
   display: inline-block;
-  background: var(--accent-color); /* Prompt 2: Conversion Green */
+  background: var(--accent-color);
   color: #111317;
-  padding: 1rem; /* Fix 7: Thumb-friendly padding */
-  border-radius: 16px; /* Prompt 2: 2xl corners */
+  padding: 1rem;
+  border-radius: 16px;
   font-weight: 700;
   font-family: 'Inter', sans-serif;
-  font-size: 1rem; /* Fix 7: Mobile-friendly font */
-  width: 100%; /* Fix 3: Mobile full-width */
+  font-size: 1rem;
+  width: 100%;
   text-align: center;
-  transition: transform 0.3s ease, background 0.3s ease; /* Prompt 2: Subtle hover */
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .btn:hover {
@@ -140,39 +140,55 @@ header#hero p {
 }
 
 section, .case-study {
-  padding: 2rem 1rem; /* Fix 3: Mobile padding */
-  min-height: 80vh; /* Fix 8: Flexible height */
-  z-index: 1; /* Fix 1.1: Section visibility */
-  animation: fadeIn 1s ease; /* Prompt 2: Subtle animation */
+  padding: 2rem 1rem;
+  min-height: 80vh;
+  z-index: 1;
+  animation: fadeIn 1s ease;
 }
 
 h2 {
-  font-family: 'Inter', sans-serif; /* Prompt 2: Inter 900 */
+  font-family: 'Inter', sans-serif;
   font-weight: 900;
-  font-size: 1.5rem; /* Fix 3: Mobile heading */
+  font-size: 1.5rem;
   margin-bottom: 1rem;
-  text-align: center; /* Fix 3: Center text */
+  text-align: center;
 }
 
 .subtext, #why p {
-  font-size: 1rem; /* Fix 3: Mobile subtext */
+  font-size: 1rem;
   color: #777;
   margin-top: -0.5rem;
   margin-bottom: 1.5rem;
-  overflow-wrap: break-word; /* Fix 6: Text overflow */
+  overflow-wrap: break-word;
 }
 
 #about {
-  display: flex; /* Fix 3: Flexbox */
-  flex-direction: column; /* Fix 4: Stack on mobile */
-  gap: 1rem; /* Fix 4: Spacing */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-#about p:not(.subtext) {
+/* Tweak 4: Style for punchy bullets */
+#about .about-points {
+  list-style: none;
+  margin: 1.5rem 0;
+}
+
+#about .about-points li {
   font-size: 1rem;
-  color: var(--text-color);
-  margin-bottom: 1rem;
-  overflow-wrap: break-word; /* Fix 6: Text overflow */
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  overflow-wrap: break-word;
+}
+
+#about .about-points li::before {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%2300E68C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>');
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  max-width: 100%;
+  height: auto;
 }
 
 #services ul {
@@ -181,25 +197,25 @@ h2 {
 }
 
 #services li {
-  font-size: 1rem; /* Fix 3: Mobile font */
+  font-size: 1rem;
   margin: 0.5rem 0;
   padding-left: 1.5rem;
   position: relative;
-  overflow-wrap: break-word; /* Fix 6: Text overflow */
+  overflow-wrap: break-word;
 }
 
 #services li::before {
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%2300E68C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'); /* Prompt 2: Lucide icons */
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%2300E68C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>');
   position: absolute;
   left: 0;
   top: 0.2rem;
-  max-width: 100%; /* Fix 6: Fluid icons */
+  max-width: 100%;
   height: auto;
 }
 
 .email-grid, .testimonials-grid, .pricing-grid {
-  display: grid; /* Fix 3: Grid layout */
-  grid-template-columns: 1fr; /* Fix 3: Mobile stacking */
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -207,13 +223,13 @@ h2 {
 .email-card, .pricing-card {
   background: var(--card-bg);
   padding: 1.5rem;
-  border-radius: 16px; /* Prompt 2: 2xl corners */
-  box-shadow: 0 0 20px rgba(0, 255, 178, 0.1); /* Prompt 2: Soft shadows */
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 255, 178, 0.1);
   transition: transform 0.3s ease;
 }
 
 .email-card:hover, .pricing-card:hover {
-  transform: translateY(-5px); /* Prompt 2: Subtle hover */
+  transform: translateY(-5px);
 }
 
 .email-card h3 {
@@ -221,7 +237,7 @@ h2 {
   font-weight: 700;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  overflow-wrap: break-word; /* Fix 6: Text overflow */
+  overflow-wrap: break-word;
 }
 
 .email-card .preview {
@@ -229,22 +245,22 @@ h2 {
   font-size: 1rem;
   color: #ccc;
   margin-bottom: 1rem;
-  overflow-wrap: break-word; /* Fix 6: Text overflow */
+  overflow-wrap: break-word;
 }
 
 .testimonials-grid blockquote {
   background: var(--card-bg);
   padding: 1.5rem;
-  border-radius: 16px; /* Prompt 2: 2xl corners */
-  box-shadow: 0 0 20px rgba(0, 255, 178, 0.1); /* Prompt 2: Soft shadows */
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 255, 178, 0.1);
   font-style: italic;
   font-size: 1rem;
-  overflow-wrap: break-word; /* Fix 6: Text overflow */
+  overflow-wrap: break-word;
 }
 
 .testimonials-grid .stat {
   font-weight: 700;
-  color: var(--accent-color); /* Prompt 2: Accent color */
+  color: var(--accent-color);
   margin-bottom: 0.5rem;
 }
 
@@ -261,14 +277,34 @@ h2 {
   color: #ccc;
 }
 
+/* Tweak 7: Style for highlighted numbers */
+.highlight {
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+/* Tweak 7: Style for emojis */
+.emoji {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+/* Tweak 2: Style for case study text */
+.case-study-text {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  overflow-wrap: break-word;
+}
+
 .case-study {
   background: var(--card-bg);
   padding: 1.5rem;
-  border-radius: 16px; /* Prompt 2: 2xl corners */
-  box-shadow: 0 0 20px rgba(0, 255, 178, 0.1); /* Prompt 2: Soft shadows */
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 255, 178, 0.1);
   margin: 2rem auto;
   text-align: center;
-  animation: fadeIn 1s ease; /* Prompt 2: Subtle animation */
+  animation: fadeIn 1s ease;
 }
 
 .case-study h3 {
@@ -282,33 +318,33 @@ h2 {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--accent-color); /* Prompt 2: Accent color */
+  color: var(--accent-color);
   margin: 1rem 0;
 }
 
 form {
-  display: flex; /* Fix 3: Flexbox */
-  flex-direction: column; /* Fix 3: Mobile stacking */
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
   max-width: 600px;
   margin-top: 1rem;
 }
 
 input, select, textarea {
-  padding: 1rem; /* Fix 7: Thumb-friendly padding */
+  padding: 1rem;
   border: 1px solid var(--border-color);
-  border-radius: 16px; /* Prompt 2: 2xl corners */
+  border-radius: 16px;
   background: var(--card-bg);
   color: var(--text-color);
   font-family: 'Inter', sans-serif;
-  font-size: 1rem; /* Fix 7: Mobile-friendly font */
-  width: 100%; /* Fix 7: Full-width inputs */
-  overflow-wrap: break-word; /* Fix 6: Text overflow */
+  font-size: 1rem;
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 input:focus, select:focus, textarea:focus {
   outline: none;
-  border-color: var(--accent-color); /* Prompt 2: Accent color */
+  border-color: var(--accent-color);
   box-shadow: 0 0 5px rgba(0, 255, 178, 0.3);
 }
 
@@ -319,24 +355,24 @@ textarea {
 
 select {
   appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%2300E68C" d="M6 9L2 5h8z"/></svg>'); /* Prompt 2: Lucide icon */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 12 12"><path fill="%2300E68C" d="M6 9L2 5h8z"/></svg>');
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
-  max-width: 100%; /* Fix 6: Fluid dropdown */
+  max-width: 100%;
 }
 
 footer {
   text-align: center;
-  padding: 2rem 1rem; /* Fix 3: Mobile padding */
+  padding: 2rem 1rem;
   border-top: 1px solid var(--border-color);
-  min-height: 10vh; /* Fix 8: Flexible height */
+  min-height: 10vh;
 }
 
 footer p {
-  color: var(--accent-color); /* Prompt 2: Accent color */
+  color: var(--accent-color);
   text-decoration: underline;
   font-size: 1.2rem;
-  overflow-wrap: break-word; /* Fix 6: Text overflow */
+  overflow-wrap: break-word;
 }
 
 .dark-mode-toggle {
@@ -348,7 +384,7 @@ footer p {
   color: var(--text-color);
   font-size: 1.5rem;
   cursor: pointer;
-  z-index: 1000; /* Fix 1.1: Ensure visibility */
+  z-index: 1000;
 }
 
 .popup {
@@ -358,7 +394,7 @@ footer p {
   transform: translate(-50%, -50%);
   background: var(--card-bg);
   padding: 1.5rem;
-  border-radius: 16px; /* Prompt 2: 2xl corners */
+  border-radius: 16px;
   box-shadow: 0 0 20px rgba(0, 255, 178, 0.3);
   color: var(--text-color);
   font-family: 'Inter', sans-serif;
@@ -366,13 +402,13 @@ footer p {
   text-align: center;
   z-index: 1000;
   display: none;
-  width: 90%; /* Fix 2: Adaptive width */
-  max-width: 400px; /* Fix 2: Cap max width */
+  width: 90%;
+  max-width: 400px;
 }
 
 .popup.show {
   display: block;
-  animation: fadeIn 0.5s ease; /* Prompt 2: Subtle animation */
+  animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
@@ -382,44 +418,44 @@ footer p {
 
 @media screen and (min-width: 768px) {
   body {
-    padding: 2rem; /* Fix 4: Desktop padding */
+    padding: 2rem;
   }
   .container {
-    max-width: 900px; /* Fix 4: Desktop width */
+    max-width: 900px;
     margin: auto;
-    flex-direction: row; /* Fix 4: Desktop layout */
-    justify-content: space-between; /* Fix 4: Desktop spacing */
+    flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
   .hamburger {
-    display: none; /* Fix 4: Hide hamburger on desktop */
+    display: none;
   }
   .nav-links {
-    flex-direction: row; /* Fix 4: Horizontal nav */
+    flex-direction: row;
     max-height: none;
     opacity: 1;
   }
   header#hero h1 {
-    font-size: 3rem; /* Fix 4: Desktop hero font */
-    text-align: left; /* Fix 4: Left-align text */
+    font-size: 3rem;
+    text-align: left;
   }
   header#hero p {
-    font-size: 1.2rem; /* Fix 4: Desktop subtext */
-    text-align: left; /* Fix 4: Left-align text */
+    font-size: 1.2rem;
+    text-align: left;
   }
   .btn {
-    width: fit-content; /* Fix 4: Desktop button width */
-    padding: 1rem 2rem; /* Fix 4: Desktop button padding */
-    font-size: 1.1rem; /* Fix 4: Desktop button font */
+    width: fit-content;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
   }
   h2 {
-    font-size: 2rem; /* Fix 4: Desktop heading */
-    text-align: left; /* Fix 4: Left-align headings */
+    font-size: 2rem;
+    text-align: left;
   }
   section, .case-study {
-    padding: 3rem 2rem; /* Fix 4: Desktop section padding */
+    padding: 3rem 2rem;
   }
   .email-grid, .testimonials-grid, .pricing-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Fix 4: Desktop grid */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
-  }
+    }
