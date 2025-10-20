@@ -11,30 +11,25 @@
   --text-color: #f5f5f7;
   --card-bg: #1A1D23;
   --border-color: #333;
-  --accent-color: #00E68C;
+  --accent-color: #FFB800; /* Replaced #00E68C with high-energy gold/orange for value/scarcity */
 }
 
-body.light-mode {
-  --bg-color: #f5f5f7;
-  --text-color: #222;
-  --card-bg: #f9f9f9;
-  --border-color: #ddd;
-}
+/* Removed body.light-mode (per index.html directive to remove dark mode) */
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif; /* Replaced Inter with Poppins for distinctive, high-trust feel */
   line-height: 1.6;
   background: var(--bg-color);
   color: var(--text-color);
   overflow-x: hidden;
   overflow-wrap: break-word;
-  padding: 1rem;
+  /* Removed padding: 1rem (centralized in .container) */
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease; /* Removed transform to avoid wobbling */
 }
 
 .container {
@@ -85,7 +80,7 @@ nav {
 }
 
 .nav-links a {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: #ccc;
 }
@@ -99,15 +94,16 @@ header#hero {
   flex-direction: column;
   align-items: center;
   padding: 2rem 1rem;
-  min-height: 80vh;
+  /* Removed min-height: 80vh */
   z-index: 1;
-  animation: fadeIn 1s ease;
+  /* Shortened animation to 0.3s */
+  animation: fadeIn 0.3s ease;
 }
 
 header#hero h1 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Playfair Display', serif; /* Replaced Inter with Playfair Display for headings */
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 2.5rem; /* Increased from 2rem for mobile dominance */
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -125,29 +121,30 @@ header#hero p {
   background: var(--accent-color);
   color: #111317;
   padding: 1rem;
-  border-radius: 16px;
+  border-radius: 8px; /* Reduced from 16px for sharper, professional look */
   font-weight: 700;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   width: 100%;
   text-align: center;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
-  background: #00CC7A;
-  transform: scale(1.05);
+  background: #E6A700; /* Darker shade of #FFB800 for hover */
+  transform: scale(1.03); /* Reduced from 1.05, added glowing shadow */
+  box-shadow: 0 5px 20px rgba(255, 184, 0, 0.4);
 }
 
 section, .case-study {
   padding: 2rem 1rem;
-  min-height: 80vh;
+  /* Removed min-height: 80vh */
   z-index: 1;
-  animation: fadeIn 1s ease;
+  animation: fadeIn 0.3s ease; /* Shortened from 1s */
 }
 
 h2 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Playfair Display', serif; /* Replaced Inter with Playfair Display for headings */
   font-weight: 900;
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -168,7 +165,6 @@ h2 {
   gap: 1rem;
 }
 
-/* Tweak 4: Style for punchy bullets */
 #about .about-points {
   list-style: none;
   margin: 1.5rem 0;
@@ -183,7 +179,7 @@ h2 {
 }
 
 #about .about-points li::before {
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%2300E68C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>');
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23FFB800" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'); /* Updated to new accent color */
   position: absolute;
   left: 0;
   top: 0.2rem;
@@ -205,7 +201,7 @@ h2 {
 }
 
 #services li::before {
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%2300E68C" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>');
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23FFB800" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'); /* Updated to new accent color */
   position: absolute;
   left: 0;
   top: 0.2rem;
@@ -224,7 +220,7 @@ h2 {
   background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 255, 178, 0.1);
+  box-shadow: 0 0 20px rgba(255, 184, 0, 0.1); /* Updated shadow to new accent color */
   transition: transform 0.3s ease;
 }
 
@@ -233,7 +229,7 @@ h2 {
 }
 
 .email-card h3 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Playfair Display', serif; /* Replaced Inter with Playfair Display */
   font-weight: 700;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
@@ -252,10 +248,10 @@ h2 {
   background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 255, 178, 0.1);
+  box-shadow: 0 0 20px rgba(255, 184, 0, 0.1); /* Updated shadow to new accent color */
   font-style: italic;
-  font-size: 1rem;
-  overflow-wrap: break-word;
+  font-size: 1.1rem; /* Increased for readability */
+  line-height: 1.8; /* Added for better readability */
 }
 
 .testimonials-grid .stat {
@@ -277,19 +273,16 @@ h2 {
   color: #ccc;
 }
 
-/* Tweak 7: Style for highlighted numbers */
 .highlight {
   font-weight: 700;
   color: var(--accent-color);
 }
 
-/* Tweak 7: Style for emojis */
 .emoji {
   display: inline-block;
   margin-left: 0.5rem;
 }
 
-/* Tweak 2: Style for case study text */
 .case-study-text {
   font-size: 1rem;
   color: var(--text-color);
@@ -301,21 +294,21 @@ h2 {
   background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 255, 178, 0.1);
+  box-shadow: 0 0 20px rgba(255, 184, 0, 0.1); /* Updated shadow to new accent color */
   margin: 2rem auto;
   text-align: center;
-  animation: fadeIn 1s ease;
+  animation: fadeIn 0.3s ease; /* Shortened from 1s */
 }
 
 .case-study h3 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Playfair Display', serif; /* Replaced Inter with Playfair Display */
   font-weight: 700;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
 
 #contact .form-header {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Playfair Display', serif; /* Replaced Inter with Playfair Display */
   font-weight: 700;
   font-size: 1.5rem;
   color: var(--accent-color);
@@ -336,7 +329,7 @@ input, select, textarea {
   border-radius: 16px;
   background: var(--card-bg);
   color: var(--text-color);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   width: 100%;
   overflow-wrap: break-word;
@@ -345,7 +338,7 @@ input, select, textarea {
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 5px rgba(0, 255, 178, 0.3);
+  box-shadow: 0 0 5px rgba(255, 184, 0, 0.3); /* Updated to new accent color */
 }
 
 textarea {
@@ -355,7 +348,7 @@ textarea {
 
 select {
   appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 12 12"><path fill="%2300E68C" d="M6 9L2 5h8z"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 12 12"><path fill="%23FFB800" d="M6 9L2 5h8z"/></svg>'); /* Updated to new accent color */
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   max-width: 100%;
@@ -375,17 +368,7 @@ footer p {
   overflow-wrap: break-word;
 }
 
-.dark-mode-toggle {
-  position: absolute;
-  top: 1.5rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  color: var(--text-color);
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 1000;
-}
+/* Removed dark-mode-toggle (per index.html directive) */
 
 .popup {
   position: fixed;
@@ -395,9 +378,9 @@ footer p {
   background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 255, 178, 0.3);
+  box-shadow: 0 0 20px rgba(255, 184, 0, 0.3); /* Updated to new accent color */
   color: var(--text-color);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   text-align: center;
   z-index: 1000;
@@ -408,7 +391,7 @@ footer p {
 
 .popup.show {
   display: block;
-  animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.3s ease; /* Shortened from 0.5s */
 }
 
 @keyframes fadeIn {
@@ -416,9 +399,44 @@ footer p {
   100% { opacity: 1; transform: translate(-50%, -50%); }
 }
 
+/* Added for index.html pricing and sticky CTA */
+.pricing-card.main-offer {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 184, 0, 0.1); /* Updated to new accent color */
+  text-align: center;
+}
+
+.price-point {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.scarcity {
+  font-weight: 700;
+  color: var(--accent-color);
+  margin: 1rem 0;
+}
+
+.sticky-cta.hidden-on-load {
+  display: none;
+}
+
+/* Added: High-Contrast KPI Metric */
+.kpi-metric {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--accent-color);
+  display: block;
+  line-height: 1;
+}
+
 @media screen and (min-width: 768px) {
   body {
-    padding: 2rem;
+    /* Removed padding: 2rem (centralized in .container) */
   }
   .container {
     max-width: 900px;
@@ -436,7 +454,7 @@ footer p {
     opacity: 1;
   }
   header#hero h1 {
-    font-size: 3rem;
+    font-size: 4rem; /* Increased from 3rem for desktop dominance */
     text-align: left;
   }
   header#hero p {
@@ -451,6 +469,7 @@ footer p {
   h2 {
     font-size: 2rem;
     text-align: left;
+    margin-bottom: 2rem; /* Added for professional header spacing */
   }
   section, .case-study {
     padding: 3rem 2rem;
@@ -458,4 +477,4 @@ footer p {
   .email-grid, .testimonials-grid, .pricing-grid {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
-    }
+  }
