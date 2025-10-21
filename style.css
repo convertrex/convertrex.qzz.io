@@ -11,13 +11,13 @@
   --text-color: #f5f5f7;
   --card-bg: #1A1D23;
   --border-color: #333;
-  --accent-color: #FFB800; /* Replaced #00E68C with high-energy gold/orange for value/scarcity */
+  --accent-color: #FFB800; /* Replaced #00E68C with Saffron Gold for value/scarcity */
 }
 
 /* Removed body.light-mode (per index.html directive to remove dark mode) */
 
 body {
-  font-family: 'Poppins', sans-serif; /* Replaced Inter with Poppins for distinctive, high-trust feel */
+  font-family: 'Poppins', sans-serif; /* Replaced Inter with Poppins for body text */
   line-height: 1.6;
   background: var(--bg-color);
   color: var(--text-color);
@@ -29,7 +29,7 @@ body {
 a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.3s ease; /* Removed transform to avoid wobbling */
+  transition: color 0.3s ease; /* Removed transform to avoid distraction */
 }
 
 .container {
@@ -87,6 +87,7 @@ nav {
 
 .nav-links a:hover {
   color: var(--accent-color);
+  transition: color 0.1s ease-out; /* Added for snappier hover */
 }
 
 header#hero {
@@ -96,8 +97,7 @@ header#hero {
   padding: 2rem 1rem;
   /* Removed min-height: 80vh */
   z-index: 1;
-  /* Shortened animation to 0.3s */
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn 0.3s ease; /* Shortened from 1s */
 }
 
 header#hero h1 {
@@ -121,7 +121,7 @@ header#hero p {
   background: var(--accent-color);
   color: #111317;
   padding: 1rem;
-  border-radius: 8px; /* Reduced from 16px for sharper, professional look */
+  border-radius: 8px; /* Reduced from 16px for sharper look */
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
@@ -131,9 +131,9 @@ header#hero p {
 }
 
 .btn:hover {
-  background: #E6A700; /* Darker shade of #FFB800 for hover */
-  transform: scale(1.03); /* Reduced from 1.05, added glowing shadow */
-  box-shadow: 0 5px 20px rgba(255, 184, 0, 0.4);
+  background: #FF9900; /* Darker Gold/Orange for aggressive glow */
+  transform: scale(1.03);
+  box-shadow: 0 5px 20px rgba(255, 184, 0, 0.5); /* Added glowing effect */
 }
 
 section, .case-study {
@@ -144,7 +144,7 @@ section, .case-study {
 }
 
 h2 {
-  font-family: 'Playfair Display', serif; /* Replaced Inter with Playfair Display for headings */
+  font-family: 'Playfair Display', serif; /* Replaced Inter with Playfair Display */
   font-weight: 900;
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -251,7 +251,7 @@ h2 {
   box-shadow: 0 0 20px rgba(255, 184, 0, 0.1); /* Updated shadow to new accent color */
   font-style: italic;
   font-size: 1.1rem; /* Increased for readability */
-  line-height: 1.8; /* Added for better readability */
+  line-height: 1.8; /* Added for readability */
 }
 
 .testimonials-grid .stat {
@@ -425,13 +425,13 @@ footer p {
   display: none;
 }
 
-/* Added: High-Contrast KPI Metric */
+/* Added: KPI Metric */
 .kpi-metric {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 900;
   color: var(--accent-color);
-  display: block;
   line-height: 1;
+  display: block;
 }
 
 @media screen and (min-width: 768px) {
@@ -469,7 +469,6 @@ footer p {
   h2 {
     font-size: 2rem;
     text-align: left;
-    margin-bottom: 2rem; /* Added for professional header spacing */
   }
   section, .case-study {
     padding: 3rem 2rem;
