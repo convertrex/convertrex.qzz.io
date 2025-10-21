@@ -9,7 +9,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     // Close menu on link click (mobile)
     if (window.innerWidth <= 768) {
       navLinks.classList.remove('show');
-      navLinks.classList.add('hidden');
       hamburger.textContent = '☰';
     }
   });
@@ -19,26 +18,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
-// Set initial state for mobile
-if (window.innerWidth <= 768) {
-  navLinks.classList.add('hidden');
-  navLinks.classList.remove('show');
-}
-
 hamburger.addEventListener('click', () => {
   const isOpen = navLinks.classList.contains('show');
   navLinks.classList.toggle('show', !isOpen);
-  navLinks.classList.toggle('hidden', isOpen);
   hamburger.textContent = isOpen ? '☰' : '✕';
 });
 
 // Handle window resize
 window.addEventListener('resize', () => {
   if (window.innerWidth > 768) {
-    navLinks.classList.remove('show', 'hidden');
-    hamburger.textContent = '☰';
-  } else {
-    navLinks.classList.add('hidden');
     navLinks.classList.remove('show');
     hamburger.textContent = '☰';
   }
@@ -46,11 +34,9 @@ window.addEventListener('resize', () => {
 
 // Fade-In Animations
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('animate');
-      }, index * 200);
+      entry.target.classList.add('animate');
       observer.unobserve(entry.target);
     }
   });
@@ -60,28 +46,39 @@ document.querySelectorAll('section, .email-card, .testimonials-grid blockquote, 
   observer.observe(el);
 });
 
-// Form Submission Pop-up
+// Form Submission Redirect
 document.querySelector('form').addEventListener('submit', function(e) {
-  const popup = document.createElement('div');
-  popup.className = 'popup show';
-  popup.innerHTML = `
-    <p>Thanks for reaching out. A response crafted for impact is on the way within 24 hrs.</p>
-    <button onclick="this.parentElement.remove()">Close</button>
-  `;
-  document.body.appendChild(popup);
-  setTimeout(() => popup.remove(), 5000);
+  e.preventDefault(); // Prevent default submission for testing
+  window.location.href = 'https://convertrex.qzz.io/thank-you'; // Redirect to Thank You page
 });
 
-// Dark Mode Toggle
-const toggleButton = document.querySelector('.dark-mode-toggle');
-const body = document.body;
-const currentMode = localStorage.getItem('theme') || 'dark';
-if (currentMode === 'light') body.classList.add('light-mode');
-toggleButton.textContent = currentMode === 'light' ? '🌞' : '🌙';
+// Track Button Clicks
+document.querySelectorAll('.btn').forEach(button => {
+  button.addEventListener('click', () => {
+    console.log('CTA Clicked: ' + button.textContent); // Replace with Google/Meta tracking code
+  });
+});
 
-toggleButton.addEventListener('click', () => {
-  body.classList.toggle('light-mode');
-  const newMode = body.classList.contains('light-mode') ? 'light' : 'dark';
-  localStorage.setItem('theme', newMode);
-  toggleButton.textContent = newMode === 'light' ? '🌞' : '🌙';
+// Active Navigation State
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const sectionId = entry.target.getAttribute('id');
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${sectionId}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('section').forEach(section => {
+  navObserver.observe(section);
+});
+
+// Keyboard Accessibility for Forms
+document.querySelectorAll('input, select, textarea, .btn').forEach(el => {
+  el.setAttribute('tabindex', '0');
 });
