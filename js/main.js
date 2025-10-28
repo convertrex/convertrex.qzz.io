@@ -6,7 +6,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth'
     });
-    // Close menu on link click (mobile)
     if (window.innerWidth <= 768) {
       navLinks.classList.remove('show');
       hamburger.textContent = 'Menu';
@@ -24,7 +23,6 @@ hamburger.addEventListener('click', () => {
   hamburger.textContent = isOpen ? 'Menu' : 'Close';
 });
 
-// Handle window resize
 window.addEventListener('resize', () => {
   if (window.innerWidth > 768) {
     navLinks.classList.remove('show');
@@ -32,7 +30,7 @@ window.addEventListener('resize', () => {
   }
 });
 
-// Fade-In Animations (Instant on enter)
+// Fade-In Animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -46,23 +44,21 @@ document.querySelectorAll('section, .case-study, .case-study-card, .pricing-card
   observer.observe(el);
 });
 
-// Track CTA Clicks (Lead Quality)
+// Track CTA Clicks
 document.querySelectorAll('.btn').forEach(button => {
   button.addEventListener('click', () => {
     const text = button.textContent.trim();
     if (text.includes('Surgically Fix My Leak')) {
-      console.log('CTA Clicked: $750 Leak Fix');
-      // REPLACE: gtag('event', 'cta_click', { tier: '750_leak_fix' });
+      gtag('event', 'cta_click', { tier: '750_leak_fix' });
     } else if (text.includes('Book 15-Min Revenue Audit')) {
-      console.log('CTA Clicked: $5K Revenue Audit');
-      // REPLACE: gtag('event', 'cta_click', { tier: '5k_audit' });
+      gtag('event', 'cta_click', { tier: '5k_audit' });
     } else {
-      console.log('CTA Clicked: ' + text);
+      gtag('event', 'cta_click', { tier: 'generic', label: text });
     }
   });
 });
 
-// Active Navigation State
+// Active Navigation
 const navObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -81,10 +77,9 @@ document.querySelectorAll('section').forEach(section => {
   navObserver.observe(section);
 });
 
-// Sticky CTA: Show after hero
+// Sticky CTA
 const stickyCTA = document.querySelector('.sticky-cta');
 const hero = document.getElementById('hero');
-
 const stickyObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) {
@@ -94,13 +89,12 @@ const stickyObserver = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.1 });
-
 stickyObserver.observe(hero);
 
-// Form Submission Redirect
+// Form Redirect
 document.querySelector('form').addEventListener('submit', function(e) {
   e.preventDefault();
-  window.location.href = '/thank-you'; // Elite next step: 5-point audit PDF
+  window.location.href = '/thank-you';
 });
 
 // Keyboard Accessibility
