@@ -7,12 +7,12 @@
 }
 
 :root {
-  --bg-color: #1A1D23;           /* Deep Charcoal - Elite readability */
-  --text-color: #f5f5f7;         /* Crisp white */
-  --card-bg: #111317;            /* Darker card for contrast */
+  --bg-color: #1A1D23;
+  --text-color: #f5f5f7;
+  --card-bg: #111317;
   --border-color: #333;
-  --gold-muted: #BFA05A;         /* Muted Gold - ONLY for financials */
-  --gold-accent: #BFA05A;        /* Alias for CTAs */
+  --gold-muted: #BFA05A;
+  --gold-accent: #BFA05A;
 }
 
 body {
@@ -83,9 +83,10 @@ nav {
   color: #ccc;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
   color: var(--gold-muted);
-  transition: color 0.1s ease-out;
+  border-bottom: 2px solid var(--gold-muted);
+  padding-bottom: 4px;
 }
 
 header#hero {
@@ -157,15 +158,12 @@ h2 {
   overflow-wrap: break-word;
 }
 
-/* ABOUT & SERVICES */
-#about .about-points,
-#services ul {
+#about .about-points, #services ul {
   list-style: none;
   margin: 1.5rem 0;
 }
 
-#about .about-points li,
-#services li {
+#about .about-points li, #services li {
   font-size: 1rem;
   margin: 0.5rem 0;
   padding-left: 1.5rem;
@@ -173,23 +171,21 @@ h2 {
   overflow-wrap: break-word;
 }
 
-#about .about-points li::before,
-#services li::before {
+#about .about-points li::before, #services li::before {
   content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23BFA05A" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>');
   position: absolute;
   left: 0;
   top: 0.2rem;
 }
 
-/* REVENUE CASE STUDIES GRID */
-.case-grid {
+.case-grid, .pricing-grid, .testimonials-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 2rem;
 }
 
-.case-study-card {
+.case-study-card, .pricing-card {
   background: var(--card-bg);
   padding: 2rem;
   border-radius: 16px;
@@ -197,11 +193,11 @@ h2 {
   transition: transform 0.3s ease;
 }
 
-.case-study-card:hover {
+.case-study-card:hover, .pricing-card:hover {
   transform: translateY(-5px);
 }
 
-.case-title {
+.case-title, .pricing-card h3 {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
   font-size: 1.6rem;
@@ -209,16 +205,10 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.case-problem {
+.case-problem, .case-solution, .pricing-card p {
   font-size: 1rem;
   color: #ddd;
   margin-bottom: 1rem;
-}
-
-.case-solution {
-  font-size: 1rem;
-  color: #ccc;
-  margin-bottom: 1.5rem;
 }
 
 .case-result {
@@ -231,34 +221,6 @@ h2 {
   text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
-/* PRICING GRID */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.pricing-card {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(191, 160, 90, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.pricing-card:hover {
-  transform: translateY(-5px);
-}
-
-.pricing-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: 1.5rem;
-  color: #fff;
-  margin-bottom: 0.8rem;
-}
-
 .price-point {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
@@ -267,13 +229,6 @@ h2 {
   margin: 1rem 0;
 }
 
-.pricing-card p {
-  font-size: 1rem;
-  color: #ddd;
-  margin-bottom: 1rem;
-}
-
-/* MAIN OFFER - $5,000+ TIER */
 .pricing-card.main-offer {
   border: 2px solid var(--gold-muted);
   position: relative;
@@ -294,7 +249,6 @@ h2 {
   z-index: 1;
 }
 
-/* TESTIMONIALS */
 .testimonials-grid blockquote {
   background: var(--card-bg);
   padding: 1.5rem;
@@ -306,13 +260,11 @@ h2 {
   color: #ddd;
 }
 
-.testimonials-grid .stat,
-.testimonials-grid .metrics span {
+.testimonials-grid .stat, .testimonials-grid .metrics span {
   color: var(--gold-muted);
   font-weight: 700;
 }
 
-/* CONTACT FORM */
 #contact .form-header {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
@@ -345,25 +297,42 @@ select {
   background-position: right 0.75rem center;
 }
 
-/* FOOTER */
 footer p {
   color: var(--gold-muted);
   text-decoration: underline;
   font-size: 1.2rem;
 }
 
-/* STICKY CTA */
+.sticky-cta {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 998;
+  width: auto;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
 .sticky-cta.hidden-on-load {
   display: none;
 }
 
-/* ANIMATIONS */
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* RESPONSIVE */
+@media (max-width: 768px) {
+  .sticky-cta {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    width: auto;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 900px;
@@ -383,4 +352,4 @@ footer p {
   }
   .case-result { font-size: 2.5rem; }
   .price-point { font-size: 2.8rem; }
-  }
+}
