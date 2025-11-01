@@ -50,7 +50,7 @@ document.querySelectorAll('.btn').forEach(button => {
     const text = button.textContent.trim();
     if (text.includes('Surgically Fix My Leak')) {
       gtag('event', 'cta_click', { tier: '750_leak_fix' });
-    } else if (text.includes('Book 15-Min Revenue Audit')) {
+    } else if (text.includes('Quantify Your Leak Now')) {
       gtag('event', 'cta_click', { tier: '5k_audit' });
     } else {
       gtag('event', 'cta_click', { tier: 'generic', label: text });
@@ -90,14 +90,3 @@ const stickyObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 stickyObserver.observe(hero);
-
-// Form Redirect
-document.querySelector('form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  window.location.href = '/thank-you';
-});
-
-// Keyboard Accessibility
-document.querySelectorAll('input, select, textarea, .btn').forEach(el => {
-  el.setAttribute('tabindex', '0');
-});
